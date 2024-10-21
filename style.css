@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(0, 0, 0);    
+}
+
+h1 {
+    color: rgba(221, 206, 206, 0.959);   
+    font-size: 100px; 
+    text-align: center;
+}
+
+.divider {
+    color: darkgray;
+    font-size: 100px;
+    text-align: center;        
+}
+
+p {
+    color: aliceblue;
+    font-size: 50;
+}
+    
