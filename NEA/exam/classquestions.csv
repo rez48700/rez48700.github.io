@@ -1,0 +1,491 @@
+QuestionID,question,answer,marks
+1,"+---------------------------+
+|           Book            |
++---------------------------+
+| - title                   |
+| - author                  |
+| - isbn                    |
++---------------------------+
+| + new(givenTitle, givenAuthor, givenIsbn)|
+| + getTitle()              |
+| + setTitle(newTitle)      |
+| + getAuthor()             |
+| + setAuthor(newAuthor)    |
+| + getIsbn()               |
+| + setIsbn(newIsbn)        |
++---------------------------+","class Book
+  private title
+  private author
+  private isbn
+
+  procedure new(givenTitle, givenAuthor, givenIsbn)
+    title = givenTitle
+    author = givenAuthor
+    isbn = givenIsbn
+  end procedure
+
+  function getTitle()
+    return title
+  end function
+
+  procedure setTitle(newTitle)
+    title = newTitle
+  end procedure
+
+  function getAuthor()
+    return author
+  end function
+
+  procedure setAuthor(newAuthor)
+    author = newAuthor
+  end procedure
+
+  function getIsbn()
+    return isbn
+  end function
+
+  procedure setIsbn(newIsbn)
+    isbn = newIsbn
+  end procedure
+end class",3
+2,"+---------------------------+
+|          Student          |
++---------------------------+
+| - name                    |
+| - studentId               |
+| - grade                   |
++---------------------------+
+| + new(givenName, givenStudentId, givenGrade)|
+| + getName()               |
+| + setName(newName)        |
+| + getStudentId()          |
+| + setStudentId(newStudentId)|
+| + getGrade()              |
+| + setGrade(newGrade)      |
++---------------------------+","class Student
+  private name
+  private studentId
+  private grade
+
+  procedure new(givenName, givenStudentId, givenGrade)
+    name = givenName
+    studentId = givenStudentId
+    grade = givenGrade
+  end procedure
+
+  function getName()
+    return name
+  end function
+
+  procedure setName(newName)
+    name = newName
+  end procedure
+
+  function getStudentId()
+    return studentId
+  end function
+
+  procedure setStudentId(newStudentId)
+    studentId = newStudentId
+  end procedure
+
+  function getGrade()
+    return grade
+  end function
+
+  procedure setGrade(newGrade)
+    grade = newGrade
+  end procedure
+end class",3
+3,"+---------------------------+
+|            Car            |
++---------------------------+
+| - make                    |
+| - model                   |
+| - year                    |
++---------------------------+
+| + new(givenMake, givenModel, givenYear)|
+| + getMake()               |
+| + setMake(newMake)        |
+| + getModel()              |
+| + setModel(newModel)      |
+| + getYear()               |
+| + setYear(newYear)        |
++---------------------------+","class Car
+  private make
+  private model
+  private year
+
+  procedure new(givenMake, givenModel, givenYear)
+    make = givenMake
+    model = givenModel
+    year = givenYear
+  end procedure
+
+  function getMake()
+    return make
+  end function
+
+  procedure setMake(newMake)
+    make = newMake
+  end procedure
+
+  function getModel()
+    return model
+  end function
+
+  procedure setModel(newModel)
+    model = newModel
+  end procedure
+
+  function getYear()
+    return year
+  end function
+
+  procedure setYear(newYear)
+    year = newYear
+  end procedure
+end class",3
+4,"+---------------------------+
+|          Employee         |
++---------------------------+
+| - name                    |
+| - employeeId              |
+| - department              |
++---------------------------+
+| + new(givenName, givenEmployeeId, givenDepartment)|
+| + getName()               |
+| + setName(newName)        |
+| + getEmployeeId()         |
+| + setEmployeeId(newEmployeeId)|
+| + getDepartment()         |
+| + setDepartment(newDepartment)|
++---------------------------+","class Employee
+  private name
+  private employeeId
+  private department
+
+  procedure new(givenName, givenEmployeeId, givenDepartment)
+    name = givenName
+    employeeId = givenEmployeeId
+    department = givenDepartment
+  end procedure
+
+  function getName()
+    return name
+  end function
+
+  procedure setName(newName)
+    name = newName
+  end procedure
+
+  function getEmployeeId()
+    return employeeId
+  end function
+
+  procedure setEmployeeId(newEmployeeId)
+    employeeId = newEmployeeId
+  end procedure
+
+  function getDepartment()
+    return department
+  end function
+
+  procedure setDepartment(newDepartment)
+    department = newDepartment
+  end procedure
+end class",3
+5,"+---------------------------+
+|          Product          |
++---------------------------+
+| - productId               |
+| - name                    |
+| - price                   |
++---------------------------+
+| + new(givenProductId, givenName, givenPrice)|
+| + getProductId()          |
+| + setProductId(newProductId)|
+| + getName()               |
+| + setName(newName)        |
+| + getPrice()              |
+| + setPrice(newPrice)      |
++---------------------------+","class Product
+  private productId
+  private name
+  private price
+
+  procedure new(givenProductId, givenName, givenPrice)
+    productId = givenProductId
+    name = givenName
+    price = givenPrice
+  end procedure
+
+  function getProductId()
+    return productId
+  end function
+
+  procedure setProductId(newProductId)
+    productId = newProductId
+  end procedure
+
+  function getName()
+    return name
+  end function
+
+  procedure setName(newName)
+    name = newName
+  end procedure
+
+  function getPrice()
+    return price
+  end function
+
+  procedure setPrice(newPrice)
+    price = newPrice
+  end procedure
+end class",3
+6,"+---------------------------+
+|       BankAccount         |
++---------------------------+
+| - accountNumber           |
+| - balance                 |
+| - owner                   |
++---------------------------+
+| + new(givenAccountNumber, givenBalance, givenOwner)|
+| + getAccountNumber()      |
+| + setAccountNumber(newAccountNumber)|
+| + getBalance()            |
+| + setBalance(newBalance)  |
+| + getOwner()              |
+| + setOwner(newOwner)      |
++---------------------------+","class BankAccount
+  private accountNumber
+  private balance
+  private owner
+
+  procedure new(givenAccountNumber, givenBalance, givenOwner)
+    accountNumber = givenAccountNumber
+    balance = givenBalance
+    owner = givenOwner
+  end procedure
+
+  function getAccountNumber()
+    return accountNumber
+  end function
+
+  procedure setAccountNumber(newAccountNumber)
+    accountNumber = newAccountNumber
+  end procedure
+
+  function getBalance()
+    return balance
+  end function
+
+  procedure setBalance(newBalance)
+    balance = newBalance
+  end procedure
+
+  function getOwner()
+    return owner
+  end function
+
+  procedure setOwner(newOwner)
+    owner = newOwner
+  end procedure
+end class",3
+7,"+---------------------------+
+|          Teacher          |
++---------------------------+
+| - name                    |
+| - teacherId               |
+| - subject                 |
++---------------------------+
+| + new(givenName, givenTeacherId, givenSubject)|
+| + getName()               |
+| + setName(newName)        |
+| + getTeacherId()          |
+| + setTeacherId(newTeacherId)|
+| + getSubject()            |
+| + setSubject(newSubject)  |
++---------------------------+","class Teacher
+  private name
+  private teacherId
+  private subject
+
+  procedure new(givenName, givenTeacherId, givenSubject)
+    name = givenName
+    teacherId = givenTeacherId
+    subject = givenSubject
+  end procedure
+
+  function getName()
+    return name
+  end function
+
+  procedure setName(newName)
+    name = newName
+  end procedure
+
+  function getTeacherId()
+    return teacherId
+  end function
+
+  procedure setTeacherId(newTeacherId)
+    teacherId = newTeacherId
+  end procedure
+
+  function getSubject()
+    return subject
+  end function
+
+  procedure setSubject(newSubject)
+    subject = newSubject
+  end procedure
+end class",3
+8,"+---------------------------+
+|           Movie           |
++---------------------------+
+| - title                   |
+| - director                |
+| - releaseYear             |
++---------------------------+
+| + new(givenTitle, givenDirector, givenReleaseYear)|
+| + getTitle()              |
+| + setTitle(newTitle)      |
+| + getDirector()           |
+| + setDirector(newDirector)|
+| + getReleaseYear()        |
+| + setReleaseYear(newReleaseYear)|
++---------------------------+","class Movie
+  private title
+  private director
+  private releaseYear
+
+  procedure new(givenTitle, givenDirector, givenReleaseYear)
+    title = givenTitle
+    director = givenDirector
+    releaseYear = givenReleaseYear
+  end procedure
+
+  function getTitle()
+    return title
+  end function
+
+  procedure setTitle(newTitle)
+    title = newTitle
+  end procedure
+
+  function getDirector()
+    return director
+  end function
+
+  procedure setDirector(newDirector)
+    director = newDirector
+  end procedure
+
+  function getReleaseYear()
+    return releaseYear
+  end function
+
+  procedure setReleaseYear(newReleaseYear)
+    releaseYear = newReleaseYear
+  end procedure
+end class",3
+9,"+---------------------------+
+|          Customer         |
++---------------------------+
+| - name                    |
+| - customerId              |
+| - email                   |
++---------------------------+
+| + new(givenName, givenCustomerId, givenEmail)|
+| + getName()               |
+| + setName(newName)        |
+| + getCustomerId()         |
+| + setCustomerId(newCustomerId)|
+| + getEmail()              |
+| + setEmail(newEmail)      |
++---------------------------+","class Customer
+  private name
+  private customerId
+  private email
+
+  procedure new(givenName, givenCustomerId, givenEmail)
+    name = givenName
+    customerId = givenCustomerId
+    email = givenEmail
+  end procedure
+
+  function getName()
+    return name
+  end function
+
+  procedure setName(newName)
+    name = newName
+  end procedure
+
+  function getCustomerId()
+    return customerId
+  end function
+
+  procedure setCustomerId(newCustomerId)
+    customerId = newCustomerId
+  end procedure
+
+  function getEmail()
+    return email
+  end function
+
+  procedure setEmail(newEmail)
+    email = newEmail
+  end procedure
+end class",3
+10,"+---------------------------+
+|           Laptop          |
++---------------------------+
+| - brand                   |
+| - model                   |
+| - price                   |
++---------------------------+
+| + new(givenBrand, givenModel, givenPrice)|
+| + getBrand()              |
+| + setBrand(newBrand)      |
+| + getModel()              |
+| + setModel(newModel)      |
+| + getPrice()              |
+| + setPrice(newPrice)      |
++---------------------------+","class Laptop
+  private brand
+  private model
+  private price
+
+  procedure new(givenBrand, givenModel, givenPrice)
+    brand = givenBrand
+    model = givenModel
+    price = givenPrice
+  end procedure
+
+  function getBrand()
+    return brand
+  end function
+
+  procedure setBrand(newBrand)
+    brand = newBrand
+  end procedure
+
+  function getModel()
+    return model
+  end function
+
+  procedure setModel(newModel)
+    model = newModel
+  end procedure
+
+  function getPrice()
+    return price
+  end function
+
+  procedure setPrice(newPrice)
+    price = newPrice
+  end procedure
+end class",3
