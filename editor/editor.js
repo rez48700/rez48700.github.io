@@ -257,51 +257,72 @@ function whileBuilder(line) {
 }
 
 function callBuilder(line) {
-  let components = line.trim().split(" ");
-  if (components[0] !== "call" || components.length < 2) {
-      return "Invalid procedure call at line: " + lineNum;
-  }
+    let callDeclaration = line.trim().substring(4).trim(); // remove "call"
 
-  return new pCall(lineNum, components[1]);
+    let procedureName = callDeclaration.split("(")[0].trim();
+    let argumentsList = [];
+
+    if (callDeclaration.includes("(")) {
+        let argumentString = callDeclaration.substring(
+            callDeclaration.indexOf("(") + 1,
+            callDeclaration.indexOf(")")
+        );
+
+        argumentsList = argumentString.split(",").map(function(argument) {
+            return argument.trim();
+        });
+    }
+
+    return new pCall(lineNum, procedureName, argumentsList);
 }
+
 
 function procedureBuilder(line) {
-  let subLines = [];
-  let branch = [];
+    let subLines = [];
+    let branch = [];
 
-  //create block for subroutine
-  for (let i = lineNum + 1; i < lines.length; i++) {
-      if (lines[i].trim().toLowerCase() === "end procedure") {
-        break;
-      }
-      subLines.push(lines[i]);
-  }
-  
-
-  //error handler
-  let components = line.trim().split(" ");
-  if (components[0] != "procedure" || components.length < 2) {
-      return "Invalid procedure declaration at line: " + lineNum;
-  }
-
-  let identifier = components[1];
-
-  //iterate through the block
-  for (let i = 0; i < subLines.length; i++) {
-    let subLine = subLines[i].trim()
-    const instruction = instructionFactory(subLine)
-    if (instruction instanceof pInstruction) {
-      branch.push(instruction)
+    // collect procedure body
+    for (let i = lineNum + 1; i < lines.length; i++) {
+        if (lines[i].trim().toLowerCase() === "end procedure") {
+            break;
+        }
+        subLines.push(lines[i]);
     }
-  }
 
-  // store as a subroutine
-  pSubroutines[identifier] = new pProcedure(lineNum, identifier, new pBranch(lineNum, branch));
+    let header = line.trim();
+    let declaration = header.substring(9).trim(); // remove "procedure"
 
-  lineNum += subLines.length + 1; //update line number
+    let procedureName = declaration.split("(")[0].trim();
 
-  return null;
+    let parameters = [];
+    if (declaration.includes("(")) {
+        let parameterString = declaration.substring(
+            declaration.indexOf("(") + 1,
+            declaration.indexOf(")")
+        );
+
+        parameters = parameterString.split(",").map(function(parameter) {
+            return parameter.trim();
+        });
+    }
+
+    // build procedure instructions
+    for (let i = 0; i < subLines.length; i++) {
+        let subLine = subLines[i].trim();
+        let instruction = instructionFactory(subLine);
+
+        if (instruction instanceof pInstruction) {
+            branch.push(instruction);
+        }
+    }
+
+    pSubroutines[procedureName] =
+        new pProcedure(lineNum, procedureName, parameters, new pBranch(lineNum, branch));
+
+    lineNum += subLines.length + 1;
+    return null; // procedures are not executed immediately
 }
+
 
 function functionBuilder(line) {
 
